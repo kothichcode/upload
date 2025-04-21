@@ -1,0 +1,152 @@
+/* Forecast.css */
+.forecast {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .section-title::after {
+    content: '';
+    height: 2px;
+    flex: 1;
+    background: linear-gradient(90deg, var(--accent-color) 0%, transparent 100%);
+    margin-left: 10px;
+  }
+  
+  .forecast-days {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) #2a2a2a;
+  }
+  
+  .forecast-days::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .forecast-days::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 10px;
+  }
+  
+  .forecast-days::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+  }
+  
+  .day-card {
+    min-width: 120px;
+    text-align: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .day-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(52, 152, 219, 0.1);
+  }
+  
+  .day-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+  
+  .day-temp {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--text-color);
+  }
+  
+  .day-desc {
+    font-size: 12px;
+    color: rgba(236, 240, 241, 0.7);
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    min-height: 30px;
+  }
+  
+  .day-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: rgba(236, 240, 241, 0.7);
+    font-size: 14px;
+  }
+  
+  .day-detail svg {
+    color: #3498db;
+  }
+  
+  .rain-chart-container {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .chart-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  
+  .rain-chart {
+    height: 300px;
+    width: 100%;
+  }
+  
+  /* Animate charts and cards */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .rain-chart-container {
+    animation: fadeInUp 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 20px;
+    }
+    
+    .day-card {
+      min-width: 100px;
+      padding: 12px;
+    }
+    
+    .day-temp {
+      font-size: 20px;
+    }
+    
+    .rain-chart {
+      height: 200px;
+    }
+  }
